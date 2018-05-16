@@ -1,8 +1,4 @@
 
-node_modules/fragment-cache/LICENSE
-*.json
-
-
 # Logs
 logs
 *.log
