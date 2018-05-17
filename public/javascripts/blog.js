@@ -5,43 +5,55 @@ let app = new Vue({
     data:{
     articleVector: [],
     fullArticle: [],
-    fullData: [],
     articleSelected: false,
-    formData: {}
+    formData: {},
+    ids: []
+    },
+    created : function() {
+        this.doCreated();
     },
     methods: {
-        created: function () {
+        doCreated: function () {
             this.$http
                 .get('/blog')
                 .then(response => {
 
-                    this.fullData = response.data;
-                    for (let article of this.fullData) {
-                        this.data.articleVector.push([
-                            article.id,
-                            article.title,
-                            article.content,
-                            article.author,
-                            article.date
-                        ]);
-                       
+                    for (let article of response.data) {
+                        this.articleVector.push({
+                            _id: article._id,
+                            title: article.title,
+                            content: article.content,
+                            author: article.author,
+                            date: article.date
+                        });
                     }
+                    console.log(this.articleVector);
                 }).catch(function (err) {
-                    console.log(err.response);
+                    console.log(err);
                 });
         },
 
         onView: function (id) {
-            this.enableView(this.viewIndex.admin);
-            this.clearList();
+           
             var url = '/blog/' + id;
+            console.log(id);
             this.$http
                 .get(url)
                 .then(response => {
-                    this.fullArticle = response.data;
+                    console.log(response.data);
+                   
+                        this.fullArticle.push({
+                         
+                            title:response.data.title,
+                            author:response.data.author,
+                            content:response.data.content,
+                            data:response.data.data
+                    });
+                    
+                    
                     this.articleSelected = true;
                 }).catch(function (err) {
-                    console.log(err.response);
+                    console.log(err);
                 });
         }, onSubmit: function () {
             this.$http
@@ -57,15 +69,6 @@ let app = new Vue({
                 .catch(function (error) {
                     console.log(error);
                 });
-        },
-        clearList() {
-            this.selectedRowIndex = null;
-            this.data.splice(0, this.data.length);
-        },
-        enableView: function () {
-
-            this.formData = {};
-            articleSelected = false;
         },
 
     },

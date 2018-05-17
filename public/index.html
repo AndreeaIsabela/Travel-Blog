@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
 
     <title>Life Travel</title>
@@ -15,7 +15,7 @@
 
 <body>
     <a class="brandImg " href="index.html">
-        <img src="../images/beand.jpg" />
+        <img src="../images/beand.jpg" class="img-responsive" />
     </a>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,7 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#"><i class="fa fa-home"></i></span></a>
+                    <a class="nav-link active" href="#">
+                        <i class="fa fa-home"></i>
+                        </span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="blogs.html">Blog</a>
@@ -45,198 +48,178 @@
 
 
     </header>
-    <section>
+    <main role="main">
+        <section>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="./images/travelers.gif" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./images/jumbotron2.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./images/kids.jpg" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <div class="row  container-fluid  ">
+                <div class="col-md-6">
+                    <h2>Experience a new culture<br>
+                        <span class="text-muted">It'll blow your mind.</span>
+                    </h2>
+                    <p class="lead">Every place comes with its distinct cultural habits, you can not think about New York without talking
+                        about its fast paced life and about Italy without enjoying its relaxed lifestyle. Similarly, while
+                        visiting the UK you might have to be a bit formal in your interactions with the locals, on the other
+                        hand, while greeting the people in Thailand ,one can be really warm and casual.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-fluid mx-auto" data-src="holder.js/500x500/auto" style="width: 700px; height: 500px;" src="./images/solotravel.jpg"
+                        data-holder-rendered="true">
+                </div>
+            </div>
 
-        <div class=" jumb  " id="jumbImage">
+            <hr>
+
+            <div class="row container-fluid ">
+                <div class="col-md-6 order-md-2">
+                    <h2>Get out of comfort zone<br>
+                        <span class="text-muted">Try new experiences.</span>
+                    </h2>
+                    <p class="lead">From simple experiences like the weather, way of life or food to the more adventurous ones like trying
+                        a new sport, travelling really pushes ones boundaries to the core. You might end up participating
+                        in a street carnival in Brazil just like the locals or trying the local delicacies (read insects)
+                        in Thailand.
+                    </p>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <img class=" img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="./images/bungee.jpg" data-holder-rendered="true"
+                        >
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row container-fluid ">
+                <div class="col-md-6 ">
+                    <h2>Carry souvenirs<br>
+                        <span class="text-muted">For your friends of course...and maybe one for you.</span>
+                    </h2>
+                    <p class="lead"> Of course one carries back plenty of memories but these are the more materialistic ones. Buying a miniature
+                        of Eiffel Tower or Taj Mahal, a Venetian mask or the famous petha from Agra is a must not only for
+                        yourself but also for your loved ones. It is rightly said when you travel to a place, you carry a
+                        part of it back with yourself. </p>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="./images/souvenirs.png" data-holder-rendered="true"
+                        >
+                </div>
+            </div>
+
+            <hr>
+            <div class="row container-fluid ">
+                <div class="col-md-6 order-md-2">
+                    <h2>Appreciate Nature<br>
+                        <span class="text-muted">See for yourself.</span>
+                    </h2>
+                    <p class="lead">The quest to explore more when one is travelling always leads to a sense of amazement about nature. While
+                        most of us keep a track of technological advancements, Nature has its own ways of outshining all
+                        of these. The Antelope Canyon in Arizona or Turquoise Ice in Russia are the finest examples of this.
+                        For more, check out the most unbelievable places around the world.
+                    </p>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <img class=" img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="./images/ice.jpg" data-holder-rendered="true"
+                        >
+                </div>
+            </div>
+            <hr>
+        </section>
         </div>
-    </section>
-
-    <section id="travel" class="contentCenter">
-        <div class="row">
+        <section id="location" class="container-fluid">
 
 
-            <p>Everyone has their very own
-                <strong> reasons to travel</strong> . Some people travel for work, some travel for pleasure while for others it is
-                just a way of life. They travel to live and to escape at the same time. Whatever might be the reason to travel,
-                here are few ways in which travelling would definitely change you and I think that is why travelling becomes
-                so important in life:
-        </div>
-        <div class="row">
-            <div class="col-md-5">
-                <br>
-                <strong>Enjoy being alone </strong>
-                <br> There is something therapeutic about being alone and being at peace with it. While you soak in a new culture,
-                you also connect with your own inner self. </p>
+            <div class="container">
+                <h3 class="text-center">Contact</h3>
 
+                <div class="row">
+                    <div class="col-md-4">
+                        <p> Drop a note
+                            <i class="fa fa-comment-o"></i>
+                        </p>
+                        <p>
+                            <span class="glyphicon glyphicon-map-marker"></span>Craiova, Romania</p>
+                        <p>
+                            <span class="glyphicon glyphicon-phone"></span>Phone: +40 727146XXX</p>
+                        <p>
+                            <span class="glyphicon glyphicon-envelope"></span>Email: scoala.ceva@yahoo.com</p>
+                        <p>
+                            <i class="fa fa-google-plus-circle"></i> Gmail: scoala_ceva@gmail.com
+                        </p>
+                    </div>
+                    <div class="col-sm-8">
+                        <form id="message-form" autocomplete="on">
+
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <input class="form-control" id="name" name="name" placeholder="First and last name" type="text" pattern="(.*)\s(.*)" required
+                                        title="Name and surname" size="40">
+
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required title="Email">
+
+                                </div>
+                            </div>
+                            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-12 form-group">
+                                    <button class="btn btn-info pull-right" type="submit">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <iframe src="https://wego.here.com/directions/mix//Facultatea-de-Automatic%C4%83,-Bulevardul-Decebal,-200440-Craiova:642jx7ps-2f6c482fae9e0f8a7a6165850f12fa70?map=44.30832,23.83422,15,normal"
+                        style="width:100%;height:400px;"></iframe>
+                </div>
             </div>
-            <div class="col-md-5">
-                <img src="./images/solotravel.jpg" class="rounded img-responsive">
-            </div>
-        </div>
 
-        <img src="./images/separator.jpg" class="rounded mx-auto d-block separatorImg img-responsive">
-        <div class="row">
-            <div class="col-md-5">
-                <br>
-                <strong>Learn to adapt </strong>
-                <br> It is a different world out there, literally. Be it the pace of life, the language or simply the change
-                in weather, it is always a change and you have to adapt to it. This is what makes travelling truly beautiful
-                as you break away from the routine and adapt to something totally new. </p>
-
-            </div>
-            <div class="col-md-5">
-                <img src="./images/adapt.jpg" class="rounded img-responsive">
-            </div>
-        </div>
-        <img src="./images/separator.jpg" class="rounded mx-auto d-block separatorImg img-responsive">
-        <div class="row">
-            <div class="col-md-5">
-                <br>
-                <strong>Experience a new culture </strong>
-                <br> Every place comes with its distinct cultural habits, you can not think about New York without talking about
-                its fast paced life and about Italy without enjoying its relaxed lifestyle. Similarly, while visiting the
-                UK you might have to be a bit formal in your interactions with the locals, on the other hand, while greeting
-                the people in Thailand ,one can be really warm and casual.
-            </div>
-            <div class="col-md-5">
-                <img src="./images/culture.jpg" class="rounded img-responsive">
-            </div>
-        </div>
-        <img src="./images/separator.jpg" class="rounded mx-auto d-block separatorImg img-responsive">
-        <div class="row">
-            <div class="col-md-5">
-                <br>
-                <strong>Broaden your taste buds </strong>
-                <br> Travelling without experiencing the local food is just not complete. It is not only a culinary experience
-                but a cultural one as well.
-            </div>
-            <div class="col-md-5">
-                <img src="./images/food.jpg" class="rounded img-responsive">
-            </div>
-        </div>
-        <img src="./images/separator.jpg" class="rounded mx-auto d-block separatorImg img-responsive">
-        <div class="row">
-            <div class="col-md-10">
-                <br>
-                <strong>Carry souvenirs </strong>
-                <br> Of course one carries back plenty of memories but these are the more materialistic ones. Buying a miniature
-                of Eiffel Tower or Taj Mahal, a Venetian mask or the famous petha from Agra is a must not only for yourself
-                but also for your loved ones. It is rightly said when you travel to a place, you carry a part of it back
-                with yourself.
-            </div>
-        </div>
-
-        <img src="./images/separator.jpg" class="rounded mx-auto d-block separatorImg img-responsive">
+        </section>
+    </main>
 
 
+    <footer class="text-center">
+        <a class="up-arrow" href="#" data-toggle="tooltip" title="Get me up">
+            <i class="fa fa-plane"></i>
+        </a>
+        <br>
+        <br>
+        <p>
+            Thank you for visit
 
+        </p>
 
-
-
-
-        <div class="row">
-            <div class="col-md-5">
-                <br>
-                <strong>Get out of comfort zone </strong>
-                <br> From simple experiences like the weather, way of life or food to the more adventurous ones like trying a
-                new sport, travelling really pushes ones boundaries to the core. You might end up participating in a street
-                carnival in Brazil just like the locals or trying the local delicacies (read insects) in Thailand.
-            </div>
-            <div class="col-md-5">
-                <img src="./images/bungee.jpg" class="rounded img-responsive">
-            </div>
-        </div>
-
-        <img src="./images/separator.jpg" class="rounded mx-auto d-block separatorImg img-responsive">
-        <div class="row">
-            <div class="col-md-10">
-                <br>
-                <strong>Get closer to your own roots </strong>
-                <br>While one travels and experiences a lot of different cultures and practices, it definitely brings one closer
-                to his or her own roots. Travel helps one appreciate one’s identity and culture. </div>
-
-        </div>
-
-        <img src="./images/separator.jpg" class="rounded mx-auto d-block separatorImg img-responsive">
-        <div class="row">
-            <div class="col-md-10">
-                <br>
-                
-                <br> Travelling is all about experiences. They can happen in terms of culture, people, places but most importantly
-                with ones own self and this was all about the different <strong>ways in which travelling can change you </strong>.
-            </div>
-           
-        </div>
-
-       
-    </section>
-    
-  <section id="location" class="container-fluid">
-
-
-    <div class="container">
-      <h3 class="text-center">Contact</h3>
-
-      <div class="row">
-        <div class="col-md-4">
-          <p> Drop a note
-            <i class="fa fa-comment-o"></i>
-          </p>
-          <p>
-            <span class="glyphicon glyphicon-map-marker"></span>Craiova, Romania</p>
-          <p>
-            <span class="glyphicon glyphicon-phone"></span>Phone: +40 727146XXX</p>
-          <p>
-            <span class="glyphicon glyphicon-envelope"></span>Email: scoala.ceva@yahoo.com</p>
-          <p>
-            <i class="fa fa-google-plus-circle"></i> Gmail: scoala_ceva@gmail.com
-          </p>
-        </div>
-        <div class="col-md-8">
-          <form id="message-form" autocomplete="on">
-
-            <div class="row">
-              <div class="col-sm-6 form-group">
-                <input class="form-control" id="name" name="name" placeholder="First and last name" type="text" pattern="(.*)\s(.*)" required
-                  title="Name and surname" size="40">
-
-              </div>
-              <div class="col-sm-6 form-group">
-                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required title="Email">
-
-              </div>
-            </div>
-            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-            <br>
-            <div class="row">
-              <div class="col-md-12 form-group">
-                <button class="btn btn-info pull-right" type="submit">Send</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="row">
-        <iframe src="https://wego.here.com/directions/mix//Facultatea-de-Automatic%C4%83,-Bulevardul-Decebal,-200440-Craiova:642jx7ps-2f6c482fae9e0f8a7a6165850f12fa70?map=44.30832,23.83422,15,normal"
-          style="width:100%;height:400px;"></iframe>
-      </div>
-    </div>
-
-  </section>
-
-
-  <footer class="text-center">
-    <a class="up-arrow" href="#" data-toggle="tooltip" title="Get me up">
-        <i class="fa fa-plane"></i>
-    </a>
-    <br>
-    <br>
-    <p>
-      Thank you for visit
-
-    </p>
-
-  </footer>
+    </footer>
 
 
 

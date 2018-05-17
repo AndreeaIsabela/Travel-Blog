@@ -8,7 +8,8 @@ class BlogController {
         this.blogs.find({}, done);
       }
       getBlog(id,done){
-          this.blogs.find({id:id},done);
+        
+          this.blogs.findOne({_id:id},done);
       }
 
       addBlog(blog, done) {

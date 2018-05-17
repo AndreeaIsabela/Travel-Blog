@@ -15,8 +15,9 @@ blogRouter.get('/', (req, res) => {
     res.json(docs);
   });
 });
-blogRouter.get('/:id', (req, res) => {
-  blogControllerIns.getBlog(req.param.id,(err, docs) => {
+blogRouter.get('/:_id', (req, res) => {
+ 
+  blogControllerIns.getBlog(req.params._id,(err, docs) => {
     if (err) {
       console.error(err);
       return res.status(500).end();
