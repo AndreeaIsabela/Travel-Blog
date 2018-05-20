@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
@@ -18,7 +18,7 @@
         <img src="../images/beand.jpg" />
     </a>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -51,98 +51,129 @@
     <main id="app" role="main">
 
 
-        <div v-if="articleSelected">
-
-            <section class="container">
-                <br>
-                <h1> {{fullArticle[0].title }}</h1>
-
-            </section>
-        </div>
-        <div v-else>
+        <div class="articleMargins" v-if="!articleSelected">
 
             <section class="container text-center">
                 <div v-for="article in articleVector">
+                    <!--v-bind:src="article.imagePath"-->
+                    <div class="card  box-shadow  forCard">
+                        <img class="card-img-top img-responsive" src="./images/jumbotron2.jpg" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                        <div class="card-body">
+                            <p class="card-text text-truncate">{{ article.title }}</p>
+                            <small class="text-muted text-center"> by {{ article.author }}</small>
+                            <p class="text-center text-truncate">
+                                <a href="#" class="truncateContent" v-on:click="onView(article._id) ">{{ article.content }}</a>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <a href="#" class="btn btn-sm btn-outline-secondary" v-on:click="onView(article._id) ">View</a>
 
 
-
-                    
-                        <div class="card  box-shadow  forCard">
-                            <img class="card-img-top" src="./images/jumbotron2.jpg" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
-                            <div class="card-body">
-                                <p class="card-text text-truncate">{{ article.title }}</p>
-                                <div class="d-flex justify-content-between align-items-center">
-
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" v-on:click="onView(article._id) ">View</button>
-
-
-                                    <small class="text-muted">{{ article.date }}</small>
-                                </div>
+                                <small class="text-muted">{{ article.date }}</small>
                             </div>
+                        </div>
 
 
-                       
 
+
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="container">
+                <div class="row">
+                    <div class="container">
+                        <h3 class="text-center articleMargins">What are the most important lessons travel has taught you?</h3>
+
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <p>
+                                    Tell us about your experience ,let others know how was your travel experience.
+                                </p>
+
+                            </div>
+                            <div class="col-md-8">
+                                <form id="message-form" autocomplete="on">
+
+                                    <div class="row">
+                                        <div class="col-sm-6 form-group">
+                                            <input class="form-control" placeholder="Author first and last name " type="text" pattern="(.*)\s(.*)" required title="Name and surname"
+                                                size="40" v-model="formData.author">
+
+                                        </div>
+                                        <div class="col-sm-6 form-group">
+                                            <input class="form-control" placeholder="Title" type="text" required v-model="formData.title">
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <textarea class="form-control" name="comments" placeholder="Article Content" rows="10" v-model="formData.content"></textarea>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <!--  <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" v-on:change="uploadImage" multiple> -->
+                                        <br>
+                                        <br>
+                                        <div class="col-md-12 form-group">
+                                            <button class="btn btn-info pull-right" type="submit" v-on:click="onSubmit">
+                                                <i class="fa fa-plus">Add New article</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
             </section>
-
         </div>
+        <div  v-else>
 
-        <section class="container">
-            <div class="row">
-                <div class="container">
-                    <h3 class="text-center">What are the most important lessons travel has taught you?</h3>
+            <section class="container">
+                <br>
+                <div class="text-center articleMargins">
 
-                    <div class="row">
 
-                        <div class="col-md-4">
-                            <p>
-                                Tell us about your experience ,let others know how was your travel experience.
-                            </p>
-
-                        </div>
-                        <div class="col-md-8">
-                            <form id="message-form" autocomplete="on">
-
-                                <div class="row">
-                                    <div class="col-sm-6 form-group">
-                                        <input class="form-control" placeholder="Author first and last name " type="text" pattern="(.*)\s(.*)" required title="Name and surname"
-                                            size="40" v-model="formData.author">
-
-                                    </div>
-                                    <div class="col-sm-6 form-group">
-                                        <input class="form-control" placeholder="Title" type="text" required v-model="formData.title">
-
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <textarea class="form-control" name="comments" placeholder="Article Content" rows="10" v-model="formData.content"></textarea>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <br> Enter today's data:
-                                        <input type="date" v-model="formData.date">
-                                    </div>
-                                    <br>
-
-                                    <div class="col-md-12 form-group">
-                                        <button class="btn btn-info pull-right" type="submit" v-on:click="onSubmit">
-                                            <i class="fa fa-plus">Add New article</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <h1> {{fullArticle[0].title }}</h1>
+                    <h2 class="text-muted">by {{fullArticle[0].author }}</h2>
                 </div>
 
-            </div>
+                <div class="container text-center">
+                    <p>
+                        {{fullArticle[0].content }}
+                    </p>
+                </div>
 
-        </section>
+                <h3 class="rightAlign text-muted">{{fullArticle[0].date }}</h3>
+                <div class="blog-share-cont">
+                    <a href="https://twitter.com/share?url=https://agile-mesa-77747.herokuapp.com/"
+                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=260,width=600');return false;"
+                        class="blog-share-btn twit">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="http://www.facebook.com/sharer.php?u=https://agile-mesa-77747.herokuapp.com/"
+                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=220,width=600');return false;"
+                        class="blog-share-btn fb">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="https://plus.google.com/share?url=https://agile-mesa-77747.herokuapp.com/"
+                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+                        class="blog-share-btn goog">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </div>
+
+                <a href="#" class="btn btn-info articleMargins" v-on:click="articleSelected=!articleSelected">Back to blogs</a>
+            </section>
+
+
         </div>
+
     </main>
 
     <footer class="text-center">

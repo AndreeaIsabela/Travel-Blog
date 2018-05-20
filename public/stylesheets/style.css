@@ -1,18 +1,26 @@
-
-nav{
-  padding-left: 0%;
-}
-.jumb{
-  
-  background-image:url("../images/jumbotron.jpg");
+.jumb {
+  background-image: url("../images/jumbotron.jpg");
   z-index: -1;
- padding-top:10%; 
+  padding-top: 10%;
   width: 100%;
-  height:500px;
+  height: 500px;
   color: black;
- 
 }
-#jumbImage{
+
+.truncateContent {
+  color: black;
+}
+
+.truncateContent:hover {
+  color: rgb(65, 63, 63);
+}
+
+.articleMargins {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#jumbImage {
   position: relative;
   padding: 0;
   margin: 0;
@@ -20,38 +28,45 @@ nav{
   background-size: 100% 100%;
   background-position: top center;
   background-attachment: fixed;
- 
 }
-section{
-  margin-top:0;
+
+section {
+  margin-top: 0;
   height: 90%;
 }
-.forCard{
+
+.forCard {
   margin-top: 10%;
   margin-bottom: 10%;
   margin-left: 20%;
   margin-right: 30%;
 }
-.brandImg{
-  align-content: center;
-  padding-left: 40%;
-}
-.col-md-6>img{
-  height:500px ;
+
+.col-md-6>img {
+  height: 500px;
   width: 600px;
   margin-left: 30%;
 }
-.contentCenter{
-  margin:0% 10% 0% 10%;
+
+.contentCenter {
+  margin: 0% 10% 0% 10%;
   border-radius: 5px;
   padding: 10% 10% 10% 10%;
 }
-.separatorImg{
-  margin-top:10%;
-  margin-bottom:5%;
+
+.indexImage {
+  width: 50%;
+  height: 50%;
+  ;
 }
+
+.rightAlign {
+  margin-left: 80%;
+  margin-top: 15%;
+  margin-bottom: 15%;
+}
+
 footer {
- 
   background-color: black;
   color: #f5f5f5;
   padding: 10px;
@@ -65,8 +80,68 @@ footer a:hover {
   color: #777;
   text-decoration: none;
 }
-#location{
+
+#location {
   background-color: black;
-  color:white;
+  color: white;
   margin-bottom: 0;
+}
+
+a.blog-share-btn {
+  border: 1px solid rgb(161, 161, 161);
+  padding: 5px 0px;
+  background: #FFF;
+  margin-right: 15px;
+  float: right;
+  width: 40px;
+  text-align: center;
+  height: 40px;
+  color: rgb(110, 109, 109);
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+  font-size: 15px;
+}
+a.blog-share-btn:hover{
+  color: rgb(255, 253, 253);
+}
+a.blog-share-btn.twit:hover {
+  background-color: #4099FF;
+  border: 1px solid #4099FF;
+}
+
+a.blog-share-btn.fb:hover {
+  background-color: #3B5998;
+  border: 1px solid #3B5998;
+}
+
+a.blog-share-btn.goog:hover {
+  background-color: #D34836;
+  border: 1px solid #D34836;
+}
+
+@media (max-width: 767px) {
+  .blog-share-cont {
+    margin-left: 30%;
+    margin-bottom: 5%;
+    z-index: 999999999999999999;
+    text-align: center;
+    padding-left: 43px;
+  }
+}
+
+@media (min-width: 768px) {
+  .blog-share-cont {
+    z-index: 999999999999999999;
+    text-align: center;
+    padding-left: 43px;
+  }
+}
+
+.blog-share-cont {
+  z-index: 999999999999999999;
+  text-align: center;
+  padding-left: 43px;
 }
