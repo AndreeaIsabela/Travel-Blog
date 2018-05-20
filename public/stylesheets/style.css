@@ -122,22 +122,18 @@ a.blog-share-btn.goog:hover {
   border: 1px solid #D34836;
 }
 
-@media (max-width: 767px) {
-  .blog-share-cont {
-    margin-left: 30%;
-    margin-bottom: 5%;
-    z-index: 999999999999999999;
-    text-align: center;
-    padding-left: 43px;
+@media (max-height: 767px) {
+  .cardImage{
+    height: 225px; 
+    width: 225px; 
+    display: block;
   }
 }
 
-@media (min-width: 768px) {
-  .blog-share-cont {
-    z-index: 999999999999999999;
-    text-align: center;
-    padding-left: 43px;
-  }
+.cardImage{
+  height: 225px;
+   width: 100%; 
+   display: block;
 }
 
 .blog-share-cont {

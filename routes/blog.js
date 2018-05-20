@@ -3,6 +3,8 @@ const BlogController = require('../controllers/blog');
 let blogModel = require('../models/blog');
 var blogRouter = new Router();
 var fs = require('fs');
+var multer=require('multer');
+var upload=multer({dest:"uploads/"});
 // injecting the blog model in the controller instance
 var blogControllerIns = new BlogController(blogModel);
 
@@ -26,34 +28,21 @@ blogRouter.get('/:_id', (req, res) => {
   });
 });
 
-blogRouter.post('/upload',(req,res)=>{
-  console.log("blog upload 222222222222222200");
-  console.log(req.body);
-  console.log(req.files);
+blogRouter.post('/upload',upload.single('image'),(req,res,next)=>{
+  var tmp_path = req.file.path;
 
+  var target_path = 'public/images/' + req.file.originalname;
+
+ 
+  var src = fs.createReadStream(tmp_path);
+  var dest = fs.createWriteStream(target_path);
+  src.pipe(dest);
 });
+
 blogRouter.post('/', (req, res) => {
-  /*console.log("image path from req body", req.body.imagePath);
-  console.log("Asa arata req.body", req.body);
-  fs.readFile(req.body.imagePath.name, function (err, data) {
-    var imageName = req.body.imagePath;
-    console.log("calea catre imagine blog.js", imagePath);
-    If there's an error
-    if(!imageName){
-      console.log("There was an error")
-      res.redirect("/");
-      res.end();
-    } else {
-      var newPath = __dirname + "/uploads/" + imageName;
-      write file to uploads/fullsize folder
-      fs.writeFile(newPath, data);
-    }
-  });
-  req.params.imagePath=newPath;
-  console.log(req.params.imagePath);
-  req.body.imagePath=newPath;
-*/
+ 
   blogControllerIns.addBlog(req.body, (err, result) => {
+    imageA=req.params.imagePath;
     if (err) {
       console.error(err);
       return res.status(500).end();

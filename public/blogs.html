@@ -57,7 +57,7 @@
                 <div v-for="article in articleVector">
                     <!--v-bind:src="article.imagePath"-->
                     <div class="card  box-shadow  forCard">
-                        <img class="card-img-top img-responsive" src="./images/jumbotron2.jpg" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                        <img class="card-img-top img-responsive cardImage" v-bind:src="'./images/' + article.imagePath"  >
                         <div class="card-body">
                             <p class="card-text text-truncate">{{ article.title }}</p>
                             <small class="text-muted text-center"> by {{ article.author }}</small>
@@ -96,26 +96,28 @@
 
                             </div>
                             <div class="col-md-8">
-                                
+
                                 <div class="row">
                                     <div class="col-sm-6 form-group">
                                         <input class="form-control" placeholder="Author first and last name " type="text" pattern="(.*)\s(.*)" required title="Name and surname"
-                                        size="40" v-model="formData.author">
-                                        
+                                            size="40" v-model="formData.author">
+
                                     </div>
                                     <div class="col-sm-6 form-group">
                                         <input class="form-control" placeholder="Title" type="text" required v-model="formData.title">
-                                        
+
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <textarea class="form-control" name="comments" placeholder="Article Content" rows="10" v-model="formData.content"></textarea>
+                                    <div class="col-sm-12 form-group">
+                                        <textarea class="form-control" name="comments" placeholder="Article Content" rows="10" v-model="formData.content"></textarea>
+                                    </div>
                                 </div>
                                 <br>
                                 <form method="post" enctype="multipart/form-data" action="/blog/upload">
                                     <div class="row">
 
-                                         <input type="file" id="image_uploads" name="image" accept=".jpg, .jpeg, .png" v-on:change="uploadImage" >
+                                        <input type="file" id="image_uploads" name="image" accept=".jpg, .jpeg, .png" v-on:change="uploadImage">
                                         <br>
                                         <br>
                                         <div class="col-md-12 form-group">
@@ -133,7 +135,7 @@
 
             </section>
         </div>
-        <div  v-else>
+        <div v-else>
 
             <section class="container">
                 <br>
@@ -152,18 +154,15 @@
 
                 <h3 class="rightAlign text-muted">{{fullArticle[0].date }}</h3>
                 <div class="blog-share-cont">
-                    <a href="https://twitter.com/share?url=https://agile-mesa-77747.herokuapp.com/"
-                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=260,width=600');return false;"
+                    <a href="https://twitter.com/share?url=https://agile-mesa-77747.herokuapp.com/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=260,width=600');return false;"
                         class="blog-share-btn twit">
                         <i class="fa fa-twitter"></i>
                     </a>
-                    <a href="http://www.facebook.com/sharer.php?u=https://agile-mesa-77747.herokuapp.com/"
-                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=220,width=600');return false;"
+                    <a href="http://www.facebook.com/sharer.php?u=https://agile-mesa-77747.herokuapp.com/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=220,width=600');return false;"
                         class="blog-share-btn fb">
                         <i class="fa fa-facebook"></i>
                     </a>
-                    <a href="https://plus.google.com/share?url=https://agile-mesa-77747.herokuapp.com/"
-                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+                    <a href="https://plus.google.com/share?url=https://agile-mesa-77747.herokuapp.com/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
                         class="blog-share-btn goog">
                         <i class="fa fa-google-plus"></i>
                     </a>

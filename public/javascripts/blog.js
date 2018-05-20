@@ -34,20 +34,15 @@ let app = new Vue({
                 });
         },
         uploadImage: function (e) {
-            console.log("1111111",e);
-
-            // this.formData.imagePath = image.target.files[0] ;
+           
             var files = e.target.files || e.dataTransfer.files;
             this.formData.imagePath = files[0].name;
-            console.log("e este", e.target);
-            console.log("formData.imagePath setat cu : ", this.formData.imagePath);
-
-        },
+           },
 
         onView: function (id) {
-            
+            this.fullArticle=[];
             var url = '/blog/' + id;
-            console.log(id);
+            console.log("id-ul este",id);
             this.$http
                 .get(url)
                 .then(response => {
@@ -81,10 +76,14 @@ let app = new Vue({
                 })
                 .then(function (response) {
                      console.log(response);
+                     window.location.reload(true);
+                     this.articleVector = [];
+                     doCreated();
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
+
         },
 
     },
