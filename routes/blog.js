@@ -26,20 +26,26 @@ blogRouter.get('/:_id', (req, res) => {
   });
 });
 
+blogRouter.post('/upload',(req,res)=>{
+  console.log("blog upload 222222222222222200");
+  console.log(req.body);
+  console.log(req.files);
+
+});
 blogRouter.post('/', (req, res) => {
   /*console.log("image path from req body", req.body.imagePath);
   console.log("Asa arata req.body", req.body);
   fs.readFile(req.body.imagePath.name, function (err, data) {
     var imageName = req.body.imagePath;
     console.log("calea catre imagine blog.js", imagePath);
-    // If there's an error
+    If there's an error
     if(!imageName){
       console.log("There was an error")
       res.redirect("/");
       res.end();
     } else {
       var newPath = __dirname + "/uploads/" + imageName;
-      // write file to uploads/fullsize folder
+      write file to uploads/fullsize folder
       fs.writeFile(newPath, data);
     }
   });

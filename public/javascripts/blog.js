@@ -25,7 +25,7 @@ let app = new Vue({
                             content: article.content,
                             author: article.author,
                             date: new Date(article.date).toDateString(),
-                            //imagePath: article.imagePath
+                            imagePath: article.imagePath
                         });
                     }
                     console.log(this.articleVector);
@@ -33,16 +33,16 @@ let app = new Vue({
                     console.log(err);
                 });
         },
-       /* uploadImage: function (e) {
-            console.log("1111111");
+        uploadImage: function (e) {
+            console.log("1111111",e);
 
             // this.formData.imagePath = image.target.files[0] ;
             var files = e.target.files || e.dataTransfer.files;
-            this.formData.imagePath = files[0];
+            this.formData.imagePath = files[0].name;
             console.log("e este", e.target);
             console.log("formData.imagePath setat cu : ", this.formData.imagePath);
 
-        },*/
+        },
 
         onView: function (id) {
             
@@ -59,7 +59,7 @@ let app = new Vue({
                         author: response.data.author,
                         content: response.data.content,
                         date: new Date(response.data.date).toDateString(),
-                        //imagePath: response.data.imagePath
+                        imagePath: response.data.imagePath
                     });
 
 
@@ -76,7 +76,7 @@ let app = new Vue({
                     title: this.formData.title,
                     date: new Date(),
                     content: this.formData.content,
-                    //imagePath: this.formData.imagePath
+                    imagePath: this.formData.imagePath
 
                 })
                 .then(function (response) {

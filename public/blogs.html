@@ -96,25 +96,26 @@
 
                             </div>
                             <div class="col-md-8">
-                                <form id="message-form" autocomplete="on">
-
-                                    <div class="row">
-                                        <div class="col-sm-6 form-group">
-                                            <input class="form-control" placeholder="Author first and last name " type="text" pattern="(.*)\s(.*)" required title="Name and surname"
-                                                size="40" v-model="formData.author">
-
-                                        </div>
-                                        <div class="col-sm-6 form-group">
-                                            <input class="form-control" placeholder="Title" type="text" required v-model="formData.title">
-
-                                        </div>
+                                
+                                <div class="row">
+                                    <div class="col-sm-6 form-group">
+                                        <input class="form-control" placeholder="Author first and last name " type="text" pattern="(.*)\s(.*)" required title="Name and surname"
+                                        size="40" v-model="formData.author">
+                                        
                                     </div>
-                                    <div class="row">
-                                        <textarea class="form-control" name="comments" placeholder="Article Content" rows="10" v-model="formData.content"></textarea>
+                                    <div class="col-sm-6 form-group">
+                                        <input class="form-control" placeholder="Title" type="text" required v-model="formData.title">
+                                        
                                     </div>
-                                    <br>
+                                </div>
+                                <div class="row">
+                                    <textarea class="form-control" name="comments" placeholder="Article Content" rows="10" v-model="formData.content"></textarea>
+                                </div>
+                                <br>
+                                <form method="post" enctype="multipart/form-data" action="/blog/upload">
                                     <div class="row">
-                                        <!--  <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" v-on:change="uploadImage" multiple> -->
+
+                                         <input type="file" id="image_uploads" name="image" accept=".jpg, .jpeg, .png" v-on:change="uploadImage" >
                                         <br>
                                         <br>
                                         <div class="col-md-12 form-group">
